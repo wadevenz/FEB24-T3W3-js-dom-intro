@@ -29,6 +29,16 @@ dataArray.forEach(car => {
     let newCarEntry = document.createElement("li");
     // Add data to the new element
     newCarEntry.innerText += car;
+
+
+    // Add q button to each entry
+    // click on the button to remove the entry from the list
+    let removeButton = document.createElement("button");
+    // removeButton.innerText = "Remove " + car;
+    removeButton.innerText = `Remove ${car}`
+    // Add the remove button to the car entry
+    newCarEntry.appendChild(removeButton);
+
     // Add the nicely-formatted element in the list container
     carsContainerList.appendChild(newCarEntry);
 });
