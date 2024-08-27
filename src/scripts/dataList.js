@@ -1,3 +1,5 @@
+
+// Declare data to use in the logic
 let dataArray = [
     "warthog",
     "interceptor",
@@ -12,20 +14,26 @@ let dataArray = [
     "toyota corolla"
 ];
 
+// Find elements on the page for us to use in the logic
 let carsContainerElement = document.getElementById("carsContainer");
 
+// Create elements to add to the page via the logic
 let carsContainerList = document.createElement("ul");
 
+// Do logic for each individual item in the array
 dataArray.forEach(car => {
+    // Verify what we are working with, just log it in to see the data's value
     console.log(car);
 
+    // Create a new HTML element to hel up format the data's value
     let newCarEntry = document.createElement("li");
-
+    // Add data to the new element
     newCarEntry.innerText += car;
-
+    // Add the nicely-formatted element in the list container
     carsContainerList.appendChild(newCarEntry);
 });
 
+// Add the list container onto the actual HTML page
 carsContainerElement.appendChild(carsContainerList);
 
 
