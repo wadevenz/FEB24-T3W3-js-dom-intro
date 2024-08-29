@@ -58,7 +58,6 @@ function renderData() {
 
 
 
-
 function removeCarFromDataList (targetItemToRemove) {
 
     // Remove the target item from the dataArray
