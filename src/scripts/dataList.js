@@ -56,8 +56,6 @@ function renderData() {
 
 
 
-
-
 function removeCarFromDataList (targetItemToRemove) {
 
     // Remove the target item from the dataArray
@@ -66,3 +64,32 @@ function removeCarFromDataList (targetItemToRemove) {
     // After the filtering is done, re-render the page with the "new" array
     renderData();
 }
+
+function addCarToDataList(event, targetInputId) {
+    // find the form from the event
+    // prevent the form from doing its default behaviour
+    event.preventDefault();
+    console.log("Add car to list function is now running")
+
+    // find the input text field based on targetInputId
+    let targetTextInput = document.getElementById(targetInputId);
+
+    // grab the string value from the text field
+    console.log(targetTextInput.value);
+
+    // push the string value into dataArray
+    dataArray.push(targetTextInput.value);
+
+    // clear out the input field text to be balnk again
+    targetTextInput.value = "";
+
+    // focus on the text field again to enable quick data entry
+    targetTextInput.focus();
+
+    // call renderData() to update the page
+    renderData();
+}
+
+
+let formInputButton = document.getElementById("formInputButton");
+formInputButton.addEventListener("click", (event) => addCarToDataList(event, "carInputText"));
